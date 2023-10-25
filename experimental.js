@@ -63,3 +63,51 @@ async function getAndDisplayWeather() {
   }
   // Waits for the DOM to be fully loaded and then displays the weather
   document.addEventListener(“DOMContentLoaded”, getAndDisplayWeather);
+
+  //---------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+  async function getWeekTwoResources(){
+    const allRecipeList = await fetch("http://localhost:4000/recipes");
+    const data = await allRecipeList.json();
+    return data
+}
+
+async function displayWeekTwoResources(weekTwoResources){
+
+    const containerDiv = document.getElementById('resource-container');
+    for(let i=0; i < weekTwoResources.payload.length; i++){
+        newResourceDiv = document.createElement('div');
+        newWeekP = document.createElement('p');
+        newWeekP.innerText = weekTwoResources.payload[i].week;
+        newResourceDiv.appendChild(newSubjectP);
+        newSubjectP = document.createElement('p');
+        newSubjectP.innerText = weekTwoResources.payload[i].subject;
+        newResourceDiv.appendChild(newSubjectP);
+        newTitleP = document.createElement('p');
+        newTitleP.innerText = weekTwoResources.payload[i].title;
+        newResourceDiv.appendChild(newTitleP);
+      }
+    }
+
+        
+        
+//         for(let j=0; j <recipes.data[i].ingredients.length; j++){
+//             newIngP = document.createElement('p')
+//             newIngP.innerText = recipes.data[i].ingredients[j]
+//             newRecipeDiv.appendChild(newIngP)
+//         }
+//         const anchorElement = document.createElement('a');
+//         anchorElement.href = `${recipes.data[i].link_to_url}`; 
+//         anchorElement.textContent = 'Visit The Method Here';
+//         newRecipeDiv.append(anchorElement)
+//         containerDiv.appendChild(newRecipeDiv)
+//     }
+
+
+// }
+
+document.addEventListener("DOMContentLoaded",populateElements)
