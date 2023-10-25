@@ -10,3 +10,39 @@ import { getWeekResources } from "./resources/resources.controller";
 4) Write function to display this data on the page (select div where data will be displayed)
 
 */
+
+const buttonW1 = document.querySelector('#WeekOne__Button');
+
+async function getAndDisplayWeekOneResources() {
+    const weekOneResources = await retrieveWeekOneResources();
+    displayWeekOneResources(weekOneResources);
+  }
+
+async function retrieveWeekOneResources() {
+    //Send GET request to the resource library API. Await the response
+    const response = await fetch(
+      “http://localhost:3000/api/resources”,
+      {
+        headers: {
+          Accept: “application/json”,
+        },
+      }
+    );
+    //Check if response failed, if so log an error and halt the app
+    if (!response.ok) {
+      console.error(`Status: ${response.status}`);
+      console.error(`Text: ${await response.text()}`);
+      return;
+    }
+    //return the parsed JSON from the response (which contains weather object)
+    const data = await response.json();
+    return data;
+  }
+
+    function displayWeekOneResources(weekOneResources) {
+    // Show word
+    const showWeekOneDate = document.getElementById("object__week__1");
+    showWeekOneDate.innerText = weekOneResources.payload[0].week;
+    }
+
+buttonW1.addEventListener('click', getAndDisplayWeekOneResources)
