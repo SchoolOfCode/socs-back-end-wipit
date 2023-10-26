@@ -41,4 +41,5 @@ test("User flow for SOCS", async ({ page }) => {
   await page.getByRole("button", { name: "HTML" }).click();
   await page.getByRole("button", { name: "Javascript" }).click();
   await page.locator("#select__topic").getByRole("link", { name: "" }).click();
+  await page.getByRole('link', { name: 'Course Overview' }).click();
 });
