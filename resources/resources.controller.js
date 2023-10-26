@@ -13,3 +13,42 @@ export async function getWeekTwoResources() {
   );
   return data.rows;
 }
+export async function getWeekThreeResources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE week = 'Week 3';"
+  );
+  return data.rows;
+}
+
+export async function getWeekFourResources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE week = 'Week 4';"
+  );
+  return data.rows;
+}
+export async function getWeekFiveResources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE week = 'Week 5';"
+  );
+  return data.rows;
+}
+
+export async function getWeekSixResources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE week = 'Week 6';"
+  );
+  return data.rows;
+}
+export async function getWeekSevenResources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE week = 'Week 7';"
+  );
+  return data.rows;
+}
+
+export async function getWeekEightResources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE week = 'Week 8';"
+  );
+  return data.rows;
+}
