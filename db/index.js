@@ -2,6 +2,7 @@
 import pg from "pg";
 import "dotenv/config";
 
+// process is an object, which we connect to our env using our elephantSQL database url
 const databaseUrl = process.env.DATABASE_URL;
 
 if (undefined === databaseUrl) {
