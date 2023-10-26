@@ -1,10 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { resetAllTables } from "../db/helpers.js";
 
-test.beforeEach(async () => {
-  await resetAllTables();
-});
-
 // test("User flow for SOCS", async ({ page }) => {
 //   await page.goto("http://localhost:5500/public");
 //   await expect(
@@ -31,4 +27,15 @@ test("User flow for SOCS", async ({ page }) => {
   await page.getByRole("link", { name: " HOME" }).click();
   await page.getByRole("link", { name: "Resources by Week" }).click();
   await page.getByRole("button", { name: "Week 1", exact: true }).click();
+  await page.getByRole("button", { name: "Week 2" }).click();
+  await page
+    .locator("#screen1 div")
+    .filter({ hasText: "Select the Week" })
+    .getByRole("link")
+    .click();
+  await page.getByRole("link", { name: "Resources by Subject" }).click();
+  await page.getByRole("button", { name: "CSS" }).click();
+  await page.getByRole("button", { name: "HTML" }).click();
+  await page.getByRole("button", { name: "Javascript" }).click();
+  await page.locator("#select__topic").getByRole("link", { name: "" }).click();
 });
