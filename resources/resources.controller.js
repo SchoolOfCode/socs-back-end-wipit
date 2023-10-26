@@ -52,3 +52,12 @@ export async function getWeekEightResources() {
   );
   return data.rows;
 }
+
+// Search data by Subject
+
+export async function getCSSresources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE subject = 'CSS';"
+  );
+  return data.rows;
+}

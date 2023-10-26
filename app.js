@@ -10,7 +10,7 @@ const app = express();
 // Specified port that frontend will use to connect to backend api, allowed to use specified methods
 app.use(
   cors({
-    origin: "http://127.0.0.1:5500",
+    origin: "http://127.0.0.1:5501",
     methods: ["GET", "POST", "DELETE", "PATCH"],
   })
 );
