@@ -61,3 +61,31 @@ export async function getCSSresources() {
   );
   return data.rows;
 }
+
+export async function getHTMLresources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE subject = 'HTML';"
+  );
+  return data.rows;
+}
+
+export async function getJavascriptResources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE subject = 'JavaScript';"
+  );
+  return data.rows;
+}
+
+export async function getMindsetResources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE subject = 'Mindset';"
+  );
+  return data.rows;
+}
+
+export async function getNodeResources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE subject = 'Node';"
+  );
+  return data.rows;
+}

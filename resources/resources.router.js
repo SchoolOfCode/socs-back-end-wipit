@@ -10,7 +10,11 @@ import {
    getWeekSixResources, 
    getWeekSevenResources, 
    getWeekEightResources,
-   getCSSresources
+   getCSSresources,
+   getHTMLresources,
+   getJavascriptResources,
+   getMindsetResources,
+   getNodeResources
  } from "./resources.controller.js";
 
 // rename route path to /week1 once everything else is completed
@@ -59,6 +63,25 @@ router.get("/week8", async function (_req, res) {
 // rename route path to /week1 once everything else is completed
 router.get("/CSS", async function (_req, res) {
   const result = await getCSSresources();
+  res.json({ success: true, payload: result });
+});
+
+router.get("/HTML", async function (_req, res) {
+  const result = await getHTMLresources();
+  res.json({ success: true, payload: result });
+});
+
+router.get("/Javascript", async function (_req, res) {
+  const result = await getJavascriptResources();
+  res.json({ success: true, payload: result });
+});
+
+router.get("/Mindset", async function (_req, res) {
+  const result = await getMindsetResources();
+  res.json({ success: true, payload: result });
+});
+router.get("/Node", async function (_req, res) {
+  const result = await getNodeResources();
   res.json({ success: true, payload: result });
 });
 
