@@ -62,6 +62,7 @@ try {
     { week: "Week 7", subject: "Mindset", title: "Basics of UI Design", resource: "https://zight.com/blog/ui-design/" },
     { week: "Week 7", subject: "CSS", title: "CSS Layouts", resource: "https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout" },
     { week: "Week 8", subject: "", title: "", resource: "" },
+    { week: "Week 8", subject: "", title: "", resource: "" },
     { week: "Week 8", subject: "", title: "", resource: "" }
   ]);
   console.log("Reset all tables and inserted data");
