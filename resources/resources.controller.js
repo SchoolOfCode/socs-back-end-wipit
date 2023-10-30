@@ -89,3 +89,24 @@ export async function getNodeResources() {
   );
   return data.rows;
 }
+
+export async function getTestingResources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE subject = 'Testing';"
+  );
+  return data.rows;
+}
+
+export async function getSQLResources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE subject = 'SQL';"
+  );
+  return data.rows;
+}
+
+export async function getAPIResources() {
+  const data = await pool.query(
+    "SELECT * FROM resource_library WHERE subject = 'API';"
+  );
+  return data.rows;
+}
