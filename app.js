@@ -8,12 +8,13 @@ import resourcesRouter from "./resources/resources.router.js";
 const app = express();
 
 // Specified port that frontend will use to connect to backend api, allowed to use specified methods
-app.use(
-  cors(/*{
-    origin: "http://127.0.0.1:5500",
-    methods: ["GET", "POST", "DELETE", "PATCH"],
-  }*/)
-);
+// app.use(
+//   cors({
+//     origin: "http://127.0.0.1:5500",
+//     methods: ["GET", "POST", "DELETE", "PATCH"],
+//   })
+// );
+app.use(cors());
 app.use(morgan("dev"));
 // takes requests and changes them to JSON format
 app.use(express.json());
