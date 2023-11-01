@@ -2,7 +2,8 @@
 import app from "./app.js";
 // Create PORT variable
 const PORT = process.env.PORT ?? 3000;
-// Write server listener
-app.listen(PORT, function () {
-  console.log(`Server is listening on http://localhost:${PORT}`);
+const HOST = process.env.HOST ?? '0.0.0.0';
+app.listen(PORT, HOST, () => {
+  console.log(`Server is now listening on http://localhost:${PORT}`);
 });
+// Write server listener
