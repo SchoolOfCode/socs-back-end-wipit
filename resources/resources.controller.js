@@ -110,3 +110,12 @@ export async function getAPIResources() {
   );
   return data.rows;
 }
+
+// POST data
+
+export async function postResources() {
+  const data = await pool.query(
+    "INSERT * FROM resource_library WHERE subject = 'API';"
+  );
+  return data.rows;
+}
