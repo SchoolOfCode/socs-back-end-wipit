@@ -7,7 +7,13 @@ import resourcesRouter from "./resources/resources.router.js";
 
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://127.0.0.1:5500", "https://socs-ui.onrender.com/"],
+    methods: ["GET", "POST", "DELETE", "PATCH"],
+    credentials: true,
+  })
+);
 app.use(morgan("dev"));
 // takes requests and changes them to JSON format
 app.use(express.json());
