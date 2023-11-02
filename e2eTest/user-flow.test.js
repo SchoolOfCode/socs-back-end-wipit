@@ -23,7 +23,7 @@ import { resetAllTables } from "../db/helpers.js";
 // });
 
 test("User flow for SOCS", async ({ page }) => {
-  await page.goto("http://localhost:5500/public/");
+  await page.goto("https://socs-ui.onrender.com/");
   await expect(
     page.getByRole("heading", { name: "School of Code Stash" })
   ).toBeVisible();
