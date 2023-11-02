@@ -113,9 +113,13 @@ export async function getAPIResources() {
 
 // POST data
 
-export async function postResources() {
-  const data = await pool.query(
-    "INSERT * FROM resource_library WHERE subject = 'API';"
-  );
-  return data.rows;
+export async function postResources(resource) {
+  const data = `INSERT INTO resource_library (week, subject, title, resource) VALUES ($1, $2, $3, $4) RETURNING *;`;
+  const result = await pool.query(data, [
+    resource.week,
+    resource.subject,
+    resource.title,
+    resource.resource,
+  ]);
+  return result.rows[0];
 }
